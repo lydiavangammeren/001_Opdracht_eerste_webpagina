@@ -1,3 +1,2 @@
-# Module 1 Level 1
-Alle opdrachten van Level 1
+# Alle opdrachten van de Winc Academy Front-end opleiding
 

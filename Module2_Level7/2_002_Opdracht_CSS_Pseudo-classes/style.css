@@ -1,0 +1,47 @@
+
+.Google:hover{
+   color: lightblue;
+   font-weight: bold; 
+}
+
+.NS:active{
+   color: red;
+   font-style: italic;
+}
+
+.Volkskrant:visited{
+   color: yellow;
+}
+
+input:focus{
+   font-size: 20px;
+   color: lime;
+}
+
+.menu {
+   display: flex;
+   justify-content: space-between;
+   }
+
+.menu {
+   background-color: darkblue;
+}
+
+li:first-child {
+   margin-left: 0px;
+}
+.menu ul li {
+   display:inline;
+ }
+
+.currentPage {
+   background-color: #6699CC;
+}
+
+li:hover {
+   background-color: lightblue
+}
+
+li input:focus {
+   border: 5px solid aqua;
+}

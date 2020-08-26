@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:700");
+
+body     {
+  background:#231F20;
+  text-align:center;
+}
+
+h1         {
+  color:#FFF;
+  font-family:'Oswald';
+  font-weight:700;
+  position:relative;  
+  margin:30px auto;
+  text-transform:uppercase;
+  width:550px;
+}
+
+h1::before, h1::after {
+/* gezamelijke eigenschappen van de halve cirkels */
+/* ALTIJD een content toevoegen, anders is er niets waarop alle eigenschappen toegepast
+kunnen worden */
+content: "";
+background: #4A90E2;
+/* display is inline (dus op dezelfde regel als de h1 tekst), maar wel met een height 
+en width. Alleen inline kan geen width en height properties hebben */
+display: inline-block;
+/* hoe lang en hoe breed is de content: */
+height: 30px;
+width: 30px;
+/* absolute positie, dus niet in verhouding tot andere elementen */
+position: absolute;
+}
+
+h1::before {  
+/* deze border-radius maakt aan de linkerkant een halve cirkel: */
+border-radius: 200px 10px 10px 200px;
+/* de positie is relatief ten opzichte van de absolute h1 tekst: */
+position: relative;
+/* de positie is 10 naar links ten opzichte van de absolute h1 tekst
+(klopt dit? positie van h1 is ook relatief. Maar ten opzichte van wat is deze positie dan?: */
+left: -10px;
+top: 0px;
+
+}
+
+h1::after {  
+/* deze border-radius maakt aan de rechterkant een halve cirkel */
+border-radius: 10px 200px 200px 10px;
+position: relative;
+left: 10px;
+top: 0px;
+
+}

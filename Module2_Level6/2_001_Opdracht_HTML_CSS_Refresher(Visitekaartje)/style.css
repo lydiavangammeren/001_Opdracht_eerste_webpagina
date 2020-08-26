@@ -1,0 +1,61 @@
+main {
+  display: flex;
+  align-items: flex-start;
+  font-family: "Open Sans";
+  font-size: 17px;
+  line-height: 1.7em;
+}
+
+.visitekaartje {
+  width: 350px;
+  padding: 10px;
+  border: 1px solid #857070;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 1px 2px;
+}
+
+.visitekaartje div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+}
+
+.ondertekst {
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.foto {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+}
+
+button {
+  width: 172px;
+  padding: 10px;
+  margin: 15px 0;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: white;
+}
+.approve {
+  color: green;
+  border: 1.5px solid green;
+  border-radius: 5px;
+}
+
+.decline {
+  color: red;
+  border: 1.5px solid red;
+  border-radius: 5px;
+}
+
+.buttons {
+  
+  /*grijze streepje boven de buttons: */
+  border-top: 0.5px solid light-grey;
+  
+}

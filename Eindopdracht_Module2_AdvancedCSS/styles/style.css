@@ -1,0 +1,193 @@
+body {
+  font-family: "Trebuchet MS", arial, verdana, sans-serif;
+  background-color: #c3cfe2;
+}
+
+.header {
+  font-size: 3vw;
+  text-align: center;
+}
+
+.header__ondertekst {
+  color: #686de0;
+  font-size: 2.5vw;
+}
+
+.testimonial {
+  position: relative;
+  width: 8.1em;
+  font-size: 3em;
+  padding: 0.5em;
+  border-radius: 1em;
+  margin: auto;
+}
+
+.testimonial__boven {
+  position: relative;
+  width: 100%;
+  height: 12em;
+  font-size: 18px;
+  color: grey;
+  background-color: #fff;
+  line-height: 1.7em;
+  padding: 2em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.testimonial__image {
+  width: 100px;
+  height: 115px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  margin: 1em 2.5em;
+  /* belangrijk om de image een absolute positie mee te geven, zo kan ik de
+    positie t.o.v. de rest bepalen. De rest een positie van relative
+    meegegeven. */
+  position: absolute;
+  top: 130px;
+}
+
+.testimonial__onder {
+  width: 100%;
+  font-size: 14px;
+  background-color: #686de0;
+  color: white;
+  text-align: center;
+  padding: 7em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.testimonial__naam {
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.testimonial__website {
+  font-size: 1.1em;
+  color: lightgray;
+}
+
+.testimonial__button {
+  opacity: 0;
+  position: absolute;
+  top: 200px;
+  right: 160px;
+}
+
+.testimonial:hover {
+  background: grey;
+}
+
+.testimonial:hover .testimonial__image {
+  opacity: 0;
+  -webkit-transition: 1000ms ease;
+  transition: 1000ms ease;
+}
+
+.testimonial:hover .testimonial__button {
+  opacity: 1;
+  -webkit-transition: 1500ms ease;
+  transition: 1500ms ease;
+}
+
+.navigation {
+  position: fixed;
+  top: 15%;
+  margin: 0;
+  right: 0px;
+}
+
+.navigation__item {
+  color: #ece4e4;
+  width: 0%;
+  margin: 10%;
+}
+
+.navigation__item:hover {
+  width: 100%;
+  font-size: 10em;
+  -webkit-transition: all 0.8s 0s ease;
+  transition: all 0.8s 0s ease;
+}
+
+.navigation--blog {
+  background-color: #e17b77;
+  font-size: 4.5em;
+}
+
+.navigation--facebook {
+  background-color: #3b5998;
+  font-size: 4em;
+}
+
+.navigation--twitter {
+  background-color: #00aced;
+  font-size: 4em;
+}
+
+.navigation--github {
+  background-color: #333;
+  font-size: 4em;
+}
+
+.navigation--linkedin {
+  background-color: #007bb6;
+  font-size: 4.5em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+footer {
+  font-size: 2em;
+  text-align: center;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -webkit-column-gap: 2.3%;
+          column-gap: 2.3%;
+  row-gap: 0.9%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 0em;
+  padding-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin: 0 5em;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    padding-top: 4.5em;
+  }
+  .navigation {
+    top: 20%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin: 0 2em;
+    -ms-grid-columns: 30% 30% 30%;
+        grid-template-columns: 30% 30% 30%;
+  }
+  .navigation {
+    top: 35%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    margin: 0 14em;
+  }
+}
+/*# sourceMappingURL=style.css.map */

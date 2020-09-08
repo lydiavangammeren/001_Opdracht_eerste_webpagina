@@ -1,0 +1,107 @@
+body {
+  background-color: #f1f1f1ff;
+  height: 100vh;
+  padding: 3em;
+  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+}
+
+
+
+.nav-sidebar ul {
+  width: 100%;
+  height: 150px;
+  background-color: #dfdbdb;
+  margin-bottom: 10%;
+  padding: 1.5%;
+  list-style: none;
+  visibility: hidden; 
+  transition: all 800ms ease-in-out;
+}
+
+li  {
+  height: 17%;
+  padding: 0px 40px;
+  text-transform: uppercase;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+
+}
+
+.btn-toggle-nav {
+  width: 100%;
+  height: 50px;
+  background-color: #5b8e7d;
+  background-image: url("hamburgermenu.png");
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: grab;
+
+  &:hover {
+    background-color: #bc4b51;
+    opacity: 0.6;
+    height: 80px;
+  } 
+}
+
+#green {
+  color: #8cb369;
+}
+
+#yellow {
+  color: #f4e285;
+}
+
+#orange {
+  color: #f4a259;
+}
+
+#blue {
+  color: #5b8e7d;
+}
+
+#burgundy {
+  color: #bc4b51;
+}
+
+main {
+  font-size: 1em;
+  margin-top: 5.5em;
+  text-align: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  border: 0.5px solid #bc4b51;
+  padding: 0.5em;
+  margin-bottom: 1em;
+
+  &__text {
+    font-size: 0.8em;
+  }
+
+  &__coolor {
+    color: #f4a259;
+  }
+}
+
+.green-background {
+  background-color: #8cb369;
+}
+
+.yellow-background {
+  background-color: #f4e285;
+}
+
+.orange-background {
+  background-color: #f4a259;
+}
+.blue-background {
+  background-color: #5b8e7d;
+}
+
+.burgundy-background {
+  background-color: #bc4b51;
+}

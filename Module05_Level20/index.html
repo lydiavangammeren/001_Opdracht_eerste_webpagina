@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <script defer src="movies.js"></script>
+    <script defer src="script.js"></script>
+    <title>Winc Filmzoeker</title>
+  </head>
+
+  <body>
+    <h1>Welkom bij de Winc Filmzoeker</h1>
+    <h3>Vind je favoriete soort film</h3>
+    <nav>
+      <div class="inline-radio">
+        <div>
+          <input
+            type="radio"
+            name="filter"
+            id="latestmovies"
+            value="latestmovies"
+          /><label for="latestmovies">Nieuwste films </label>
+        </div>
+        <div>
+          <input type="radio" name="filter" id="avengers" value="avengers" />
+          <label for="avengers">Avenger films</label>
+        </div>
+        <div>
+          <input type="radio" name="filter" id="x-men" value="x-men" />
+          <label for="x-men">X-Men films</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            name="filter"
+            id="princess"
+            value="princess"
+          /><label for="princess">Princess films</label>
+        </div>
+        <div>
+          <input type="radio" name="filter" id="batman" value="batman" /><label
+            for="batman"
+            >Batman films</label
+          >
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <ul id="movielist"></ul>
+    </div>
+  </body>
+</html>

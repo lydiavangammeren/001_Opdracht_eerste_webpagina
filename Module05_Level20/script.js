@@ -7,7 +7,7 @@ const addMoviesToDom = (filmdatabase) => {
     const image = document.createElement("img");
     image.src = movie.Poster;
     imdblink.appendChild(image);
-    listElement.appendChild(imdblink);
+    listElement.appendChild(imdblink);  
     movieList.appendChild(listElement);
   });
 };

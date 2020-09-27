@@ -5,8 +5,6 @@ body {
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
 }
 
-
-
 .nav-sidebar ul {
   width: 100%;
   height: 150px;
@@ -14,18 +12,17 @@ body {
   margin-bottom: 10%;
   padding: 1.5%;
   list-style: none;
-  visibility: hidden; 
+  // visibility: hidden;
   transition: all 300ms ease-in-out;
 }
 
-li  {
+li {
   height: 17%;
   padding: 0px 40px;
   text-transform: uppercase;
-  opacity: 0;
+  //opacity: 0;
   cursor: pointer;
   transition: all 400ms ease-in-out;
-
 }
 
 .btn-toggle-nav {
@@ -42,27 +39,27 @@ li  {
     background-color: #bc4b51;
     opacity: 0.6;
     height: 80px;
-  } 
+  }
 }
 
 #green {
-  color: #8cb369;
+  color: green;
 }
-
 #yellow {
-  color: #f4e285;
+  color: yellow;
 }
-
 #orange {
-  color: #f4a259;
+  color: orange;
 }
-
 #blue {
-  color: #5b8e7d;
+  color: blue;
+}
+#red {
+  color: red;
 }
 
-#burgundy {
-  color: #bc4b51;
+.hidden {
+  opacity: 0;
 }
 
 main {
@@ -81,27 +78,7 @@ main {
   &__text {
     font-size: 0.8em;
   }
-
-  &__coolor {
-    color: #f4a259;
+  &__important {
+    color: red;
   }
-}
-
-.green-background {
-  background-color: #8cb369;
-}
-
-.yellow-background {
-  background-color: #f4e285;
-}
-
-.orange-background {
-  background-color: #f4a259;
-}
-.blue-background {
-  background-color: #5b8e7d;
-}
-
-.burgundy-background {
-  background-color: #bc4b51;
 }

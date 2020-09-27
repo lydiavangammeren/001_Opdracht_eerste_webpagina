@@ -12,7 +12,6 @@ body {
   margin-bottom: 10%;
   padding: 1.5%;
   list-style: none;
-  visibility: hidden;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
@@ -21,7 +20,6 @@ li {
   height: 17%;
   padding: 0px 40px;
   text-transform: uppercase;
-  opacity: 0;
   cursor: pointer;
   -webkit-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
@@ -46,23 +44,27 @@ li {
 }
 
 #green {
-  color: #8cb369;
+  color: green;
 }
 
 #yellow {
-  color: #f4e285;
+  color: yellow;
 }
 
 #orange {
-  color: #f4a259;
+  color: orange;
 }
 
 #blue {
-  color: #5b8e7d;
+  color: blue;
 }
 
-#burgundy {
-  color: #bc4b51;
+#red {
+  color: red;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 main {
@@ -83,27 +85,7 @@ main {
   font-size: 0.8em;
 }
 
-.footer__coolor {
-  color: #f4a259;
-}
-
-.green-background {
-  background-color: #8cb369;
-}
-
-.yellow-background {
-  background-color: #f4e285;
-}
-
-.orange-background {
-  background-color: #f4a259;
-}
-
-.blue-background {
-  background-color: #5b8e7d;
-}
-
-.burgundy-background {
-  background-color: #bc4b51;
+.footer__important {
+  color: red;
 }
 /*# sourceMappingURL=style.css.map */

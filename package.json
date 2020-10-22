@@ -1,0 +1,23 @@
+{
+  "name": "WincAcademy_Front-end_alle_opdrachten",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lydiavangammeren/WincAcademy_Front-end_alle_opdrachten.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lydiavangammeren/WincAcademy_Front-end_alle_opdrachten/issues"
+  },
+  "homepage": "https://github.com/lydiavangammeren/WincAcademy_Front-end_alle_opdrachten#readme",
+  "devDependencies": {
+    "jest": "^26.6.0"
+  }
+}

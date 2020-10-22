@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>To Do List</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script async defer src="api-client.js" type="text/javascript"></script>
+    <script async defer src="script.js" type="text/javascript"></script>
+    <script
+      src="https://kit.fontawesome.com/ce569cd9a5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <header>
+      <h1>To Do List for Today</h1>
+    </header>
+
+    <main class="main">
+      <form>
+        <input id="task" type="text" required placeholder="Add a new task" />
+        <button type="submit" class="add-button">
+          <i class="fas fa-plus-circle"></i>
+        </button>
+      </form>
+      <div class="todoList"><ul></ul></div>
+      <button class="todoList__deleteAllButton">Delete All Tasks</button>
+    </main>
+  </body>
+</html>

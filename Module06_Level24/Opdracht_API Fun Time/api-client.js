@@ -1,4 +1,6 @@
-alert("Druk op de button!");
+//Heb dit even uitgecomment, is irritant als het steeds tevoorschijn komt
+//alert("Druk op de button!"); 
+
 
 const apiUrl = "https://www.tronalddump.io/";
 const randomQuote = `${apiUrl}/random/quote`;
@@ -13,6 +15,8 @@ const getRandomQuote = async () => {
     console.log(error);
   }
 };
+
+console.log("Get random quote:", getRandomQuote())
 
 const generateRandomQuoteHTML = async () => {
   const li = document.createElement("li");

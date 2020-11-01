@@ -1,0 +1,95 @@
+html, body {margin: 0; height: 100%;}
+
+body {
+  box-sizing: border-box;
+  color: #ffcbdd;
+  font-size: 135%;
+  background-color: #fb4b4e;
+  font-family: "Rockwell Extra Bold", "Ultra", serif;
+}
+
+.title {
+  text-align: center;
+}
+
+.guess,
+.restart {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid black;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #fb4b4e;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.guess:hover,
+.restart:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.win,
+.lose {
+  display: none;
+}
+
+.win h2 {
+  color: #2a2b2a;
+}
+
+.lose h2 {
+  color: #d10000;
+}
+
+.swirl-in-fwd {
+  animation: swirl-in-fwd 1s ease-out infinite both;
+}
+
+@keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "title title lose win"
+    "word word incorrect-letters incorrect-letters"
+    "input input input lives";
+}
+
+.title {
+  grid-area: title;
+}
+
+.word {
+  grid-area: word;
+}
+
+.incorrect-letters {
+  grid-area: incorrect-letters;
+}
+
+.input {
+  grid-area: input;
+}
+
+.lives {
+  grid-area: lives;
+}

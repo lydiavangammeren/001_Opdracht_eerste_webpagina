@@ -1,0 +1,47 @@
+1. Unit Tests maken ✔
+
+Doel: refactor de code en zorg dat de game blijft werken.
+
+1. Schrijf voor de volgende functionaliteiten een test:
+        - starten van de game d.m.v. het kiezen van het woord  ✔ 
+        - checken of een letter voorkomt in het woord ✔
+        - updaten van het aantal pogingen van de gebruiker ✔ 
+        - updaten van de lijst met letters die al geraden zijn door de gebruiker ✔
+        - verliezen van de game wanneer er geen pogingen meer over zijn ✔
+        - winnen van de game ✔
+
+Doe voor elke functie het volgende:
+
+Bedenk: functie 1, moet "x" kunnen
+Schrijf een test die dat controleert:
+Hoe wil ik dat de functie, die de game gaat starten, heet? Gebruik die naam in je test.
+Schrijf de verwachtingen op in je test. Laat de test falen en slagen
+Start met het refactoren van die functie naar je verwachtingen:
+ Bij refactoren kun je denken aan: conventies, duidelijke namen van functies en variabelen, 
+  lokale vs globale variabelen, pure functions)
+  en kijk of hij de test nog steeds passed
+ga door naar functie 2, maar zorg dat functionaliteit van functie 1 blijft bestaan
+
+2. Call de zes 'nieuwe' functies op de juiste plek in de code ✔
+
+3. Refactor het hele bla.js script en test bij elke aanpassing of het spel nog steeds werkt ✔
+        - geef logische functienamen
+        - geef logische variable namen?
+        - call alle functies
+        - maak de variables local als ze local moeten zijn, en global als ze global moeten zijn
+        - zorg dat een functie alle informatie die hij nodig heeft binnen de functie zelf
+
+
+
+2. Stylen
+
+Doel: style de game zodat het gebruiksvriendelijker wordt
+
+- Gebruik CSS Grid of Flexbox voor een mooie indeling ✔
+
+- Gebruik minstens 2 => animaties naar keuze: 1 voor winnen, 1 voor verliezen ✔
+
+- Gebruik styling voor de buttons + zorg dat er kleur verandert in de button wanneer je hovert ✔
+
+- Gebruik nog veel meer styling zodat de game echt awesome wordt ✔
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hangman</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+    <div class="title">
+    <img src="hangman.png">
+    <h1>Web Developer's 'Hangman' Game</h1>
+    <p> - no developers were harmed during the making of this game -</p>
+  </div>
+    <div class="win">
+      <h2>You won!</h2>
+      <img class="swirl-in-fwd" src="https://media.giphy.com/media/2sXf9PbHcEdE1x059I/giphy.gif" />
+    </div>
+
+    <div class="lose">
+      <h2>You lost..Don't worry, just keep trying and you'll get better at this :)</h2>
+      <img class="swirl-in-fwd" src="https://media.giphy.com/media/lRYTOcfeaJfRLdSRW5/giphy.gif" />
+      <p>The chosen word was: <span></span></p>
+    </div>
+    <div class="input">
+    <input type="text" placeholder="Guess a letter" maxlength="1" />
+    <button class="guess">Guess</button>
+    <button class="restart">Restart</button>
+  </div>
+    <div class="word">
+    <h2>Current word:</h2>
+    <div class="the_word">_ _ _ _ _</div>
+    </div>
+    <div class="incorrect-letters">
+    <h3>Incorrectly guessed letters:</h3>
+    <div class="wrongletters"></div>
+    </div>
+    <div class="lives">
+    <p class="lives">You have <span>5</span> lives remaining</p>
+  </div>
+  </div>
+    <script defer type="text/javascript" src="script.js"></script>
+  </body>
+</html>

@@ -1,8 +1,0 @@
-.container {
-    border: 5px solid #ffcc5c;
-    display: flex;
-    /*Dit draait de default richting (main axis en cross axis) om.
-     Dus in plaats van (row, links naar rechts) is de richting nu (column, boven naar beneden):
-    flex-direction: column; */
-    
-  }

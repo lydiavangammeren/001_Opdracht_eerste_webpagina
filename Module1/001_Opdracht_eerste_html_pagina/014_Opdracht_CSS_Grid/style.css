@@ -1,0 +1,57 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto 300px 160px 40px auto;
+  /* maak gebruik van grid-template-areas! */
+  grid-template-areas: 
+      "h h h h h h h h h h h h"
+      "c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1"
+      "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2"
+      "m m m m m m m m m m m m"
+      "f f f f f f f f f f f f";
+}
+
+.header {
+  grid-area: h;
+  background-color: red;
+}
+
+.content1 {
+  grid-area: c1;
+  background-color: yellow;
+}
+
+.content2 {
+  grid-area: c2;
+  background-color: blue;
+ }
+
+.menu {
+  grid-area: m;
+  background-color: green;
+  
+}
+.footer {
+  grid-area: f;
+  background-color: orange;
+}
+
+@media (min-width: 1025px) {
+  .container {
+    grid-template-rows: auto 250px 250px auto;
+    grid-template-areas: 
+      "h h h h h h h h h h h h"
+      "c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1"
+      "c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 m"
+      "f f f f f f f f f f f f";
+  }
+}
+
+@media (min-width: 1281px) {.container {
+  grid-template-rows: auto 500px auto;
+  grid-template-areas: 
+    "h h h h h h h h h h h h"
+    "c1 c1 c1 c1 c1 c1 c2 c2 c2 c2 c2 m"
+    "f f f f f f f f f f f f";
+}
+}

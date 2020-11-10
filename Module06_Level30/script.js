@@ -185,11 +185,11 @@ const updateGameResult = () => {
   displayGameOver(word, guessedLetters, wrongTries);
 };
 
-module.exports = [
+module.exports = {
   pickRandomWordFromList,
   generateWordWithUnguessedLetters,
   isGameWon,
   updateLivesLeft,
   addLetterToWrongLettersList,
   isWordGuessed,
-];
+};

@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "..\\..\\Level 30 Eindopdracht Galgje"
+	},
+	{
+		"path": ".."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "WincAcademy_Front-end_alle_opdrachten"
+  }
+}

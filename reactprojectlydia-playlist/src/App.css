@@ -1,0 +1,127 @@
+* {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.Header {
+  padding: 10px 20px;
+  text-align: center;
+  color: #ea3546;
+}
+
+img {
+  opacity: 0.5;
+}
+img:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f86624;
+  list-style: none;
+  margin: 5px;
+  color: black;
+}
+
+.list-item {
+  background: #f86624;
+}
+.list-item:nth-child(odd) {
+  background: #f9c80e;
+}
+
+button,
+select,
+.submit,
+input {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  background: #ea3546;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transition: all 0.2s;
+}
+button:hover,
+.submit:hover {
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.submit {
+  background: #662e9b;
+}
+input {
+  background: #f86624;
+}
+
+input,
+.submit,
+select,
+button {
+  border: 5px solid #f9c80e;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 0 0 10px 0;
+  border-radius: 2em;
+}
+
+.delete,
+.sortalbum {
+  margin: 10px;
+}
+
+.selecttheme {
+  margin: 0px 10px 0px 20px;
+}
+table.cinereousTable {
+  width: 100%;
+}
+table.cinereousTable td,
+table.cinereousTable th,
+table.cinereousTable tfoot {
+  border: 1px solid #662e9b;
+  padding: 4px 4px;
+}
+table.cinereousTable tbody td {
+  font-size: 13px;
+}
+table.cinereousTable thead,
+table.cinereousTable tfoot {
+  background: #662e9b;
+  background: -moz-linear-gradient(top, #662e9b 0%, #9e9081 66%, #948473 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #662e9b 0%,
+    #9e93a8 66%,
+    #948473 100%
+  );
+  background: linear-gradient(to bottom, #662e9b 0%, #8769a3 66%, #9e93a8 100%);
+}
+table.cinereousTable {
+  font-size: 17px;
+  font-weight: bold;
+  color: #f0f0f0;
+  text-align: left;
+}
+table.cinereousTable thead th:first-child,
+table.cinereousTable tfoot:first-child {
+  border-left: none;
+}

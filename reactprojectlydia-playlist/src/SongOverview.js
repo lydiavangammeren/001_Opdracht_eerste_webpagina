@@ -120,7 +120,7 @@ class SongOverview extends React.Component {
     this.addSong = this.addSong.bind(this);
     this.deleteSongList = this.deleteSongList.bind(this);
     this.sortByAlbum = this.sortByAlbum.bind(this);
-    this.sortAlphabetically = this.sortAlphabetically.bind(this)
+    this.sortAlphabetically = this.sortAlphabetically.bind(this);
     this.filterByTheme = this.filterByTheme.bind(this);
     this.filterByRating = this.filterByRating.bind(this);
   }
@@ -163,16 +163,27 @@ class SongOverview extends React.Component {
     });
   }
 
+  // filterByTheme(event) {
+  //   const theme = event.target.value;
+  //   this.setState((prevState) => {
+  //     return {
+  //       songs: prevState.songs.filter((song) => {
+  //         return song.theme === theme;
+  //       }),
+  //     };
+  //   });
+  //   console.log(theme);
+  // }
+
   filterByTheme(event) {
     const theme = event.target.value;
-    this.setState((prevState) => {
-      return {
-        songs: prevState.songs.filter((song) => {
-          return song.theme === theme;
-        }),
-      };
-    });
-    console.log(theme);
+    console.log(theme)
+    const songs = this.state.songs
+    const themeSongs = (
+      songs.filter((song) => {
+        return song.theme === theme;
+      }))
+    return themeSongs;  
   }
 
   filterByRating(event) {

@@ -41,7 +41,7 @@ class SongForm extends React.Component {
             type="text"
             name="schrijver"
             placeholder="Tekstschrijver"
-            value={this.state.schrijver}
+            value={this.state.writer}
             onChange={this.handleChange}
           />
         </label>

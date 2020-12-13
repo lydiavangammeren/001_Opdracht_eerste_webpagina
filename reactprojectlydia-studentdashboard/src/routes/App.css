@@ -1,0 +1,34 @@
+
+
+* {
+  text-align: center;
+  background: #5e4955;
+  font-family: "BebasNeueRegular", "Arial Narrow", Arial, sans-serif;
+  font-weight: 900;
+}
+
+.App {
+  color: #c99da3;
+}
+
+h1 {
+  font-size: 7em;
+}
+
+a {
+  text-decoration: none;
+  color: #c99da3;
+}
+li {
+  list-style: none;
+}
+.navlink {
+  display: inline;
+  margin: 5%;
+  border: 1px solid black;
+  padding: 1%;
+}
+
+.dropdown {
+  color: red
+}

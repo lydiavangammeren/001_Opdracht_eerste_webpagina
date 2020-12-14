@@ -16,7 +16,7 @@ class Chart extends Component {
     // console.log(uniqueassignments)
     const funPerAssignment = uniqueassignments.map((uniqueassignment) => {
       const funFactor = [];
-      items.map((item) => {
+      items.forEach((item) => {
         if (item.assignment === uniqueassignment) {
           funFactor.push(item.funfactor);
         }

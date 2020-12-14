@@ -5,11 +5,26 @@ import {
   YAxis,
   HorizontalGridLines,
   VerticalBarSeries,
-  ChartLabel
+  ChartLabel,
 } from "react-vis";
 
 class Chart extends Component {
   render() {
+    const { items } = this.props;
+    const assignments = items.map((item) => item.assignment);
+    const uniqueassignments = [...new Set(assignments)];
+    // console.log(uniqueassignments)
+    const funPerAssignment = uniqueassignments.map((uniqueassignment) => {
+      const funFactor = [];
+      items.map((item) => {
+        if (item.assignment === uniqueassignment) {
+          funFactor.push(item.funfactor);
+        }
+      });
+      return funFactor;
+    });
+    console.log(funPerAssignment);
+
     const data = [
       { x: 0, y: 8 },
       { x: 1, y: 5 },
@@ -30,24 +45,24 @@ class Chart extends Component {
           <XAxis />
           <YAxis />
           <ChartLabel
-    text="Assignments"
-    className="alt-x-label"
-    includeMargin={false}
-    xPercent={0.025}
-    yPercent={1.01}
-    />
+            text="Assignments"
+            className="alt-x-label"
+            includeMargin={false}
+            xPercent={0.025}
+            yPercent={1.01}
+          />
 
-  <ChartLabel
-    text="Funfactor & difficulty"
-    className="alt-y-label"
-    includeMargin={false}
-    xPercent={0.06}
-    yPercent={0.06}
-    style={{
-      transform: 'rotate(-90)',
-      textAnchor: 'end'
-    }}
-    />
+          <ChartLabel
+            text="Funfactor & difficulty"
+            className="alt-y-label"
+            includeMargin={false}
+            xPercent={0.06}
+            yPercent={0.06}
+            style={{
+              transform: "rotate(-90)",
+              textAnchor: "end",
+            }}
+          />
         </XYPlot>
       </div>
     );

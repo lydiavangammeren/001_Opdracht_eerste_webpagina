@@ -1,20 +1,17 @@
 import React from "react";
+
 import StudentListItem from "./StudentListItem";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 
 class StudentList extends React.Component {
   render() {
-    const { items, handleClick } = this.props;
+    const { items } = this.props; 
     const names = items.map((item) => item.name);
     const uniquenames = [...new Set(names)];
     const listOfStudents = uniquenames
       ? uniquenames.map((uniquename) => (
-          <StudentListItem
-            key={uniquename}
-            clickItem={handleClick}
-            item={uniquename}
-          ></StudentListItem>
+          <StudentListItem key={uniquename} item={uniquename}></StudentListItem>
         ))
       : "";
 

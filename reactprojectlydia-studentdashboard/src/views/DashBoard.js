@@ -18,7 +18,6 @@ import React from "react";
 import Chart from "./Chart";
 import studentdata from "../utils/studentdata";
 import StudentList from "./StudentList";
-import StudentEvaluation from "./StudentEvaluation"
 import "../../node_modules/react-vis/dist/style.css";
 
 class DashBoard extends React.Component {
@@ -30,19 +29,12 @@ class DashBoard extends React.Component {
     };
   }
 
-  handleclick(event) {
-    const name = event.target.innerText;
-  }
-
   render() {
     return (
       <div>
         <h2>Hier komt een heel mooie tabel</h2>
-        <Chart></Chart>
-        <StudentList
-          handleClick={this.handleclick}
-          items={this.state.students}
-        ></StudentList>
+        <Chart items={this.state.students}></Chart>
+        <StudentList items={this.state.students}></StudentList>
       </div>
     );
   }

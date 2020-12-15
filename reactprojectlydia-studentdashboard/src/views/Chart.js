@@ -10,7 +10,14 @@ import {
 
 class Chart extends Component {
   handleChange(event) {
-    console.log(event.target.value);
+    const checkedFunBox = document.getElementById("fun");
+    const checkedDifficulty = document.getElementById("difficulty");
+    const checkedBoxValue = event.target.value;
+    const funBars = document.getElementsByClassName("funfactor");
+    if (checkedFunBox.checked == true) {
+      // document.getElementByClassName("funfactor").style.visibility = "visible"
+      console.log("fun checkbox was checked");
+    } else {console.log("should not be visible")}
   }
   render() {
     // variables die ik voor zowel fun als difficulty nodig heb:
@@ -38,10 +45,10 @@ class Chart extends Component {
     );
     // console.log(funSum);
     // console.log(funAverage);
-    const xyFunFactorAverage = funAverage.map((y, index) => {
+    const funFactorData = funAverage.map((y, index) => {
       return { x: index, y };
     });
-    // console.log(xyFunFactorAverage);
+    // console.log(funFactorData);
 
     // functies om difficulty naar het juiste formaat te krijgen.
     // later nog refactoren zodat ik 1 cluster aan functies voor fun en difficulty heb?
@@ -71,7 +78,6 @@ class Chart extends Component {
     });
     // console.log(xyDifficultyAverage);
 
-    const funData = xyFunFactorAverage;
     //  const funData = [{x: 0, y: 2 + 4}, {x: 1, y: 4}, {x: 2, y: 4}, {x: 3, y: 4}]
     //  const difficultyData = [{x: 0, y: 5}, {x: 1, y: 3}, {x: 2, y: 2}, {x: 3, y: 1}]
 
@@ -82,12 +88,12 @@ class Chart extends Component {
           <VerticalBarSeries
             className="funfactor"
             color="#c99da3"
-            data={funData}
+            data={funFactorData}
           />
           <VerticalBarSeries className="difficulty" data={difficultyData} />
           <XAxis />
-          <YAxis />
-          <YAxis />
+          <YAxis className="funfactor" />
+          <YAxis className="difficulty" />
           <ChartLabel
             text="Assignments"
             className="alt-x-label"
@@ -113,6 +119,7 @@ class Chart extends Component {
           <label>
             <input
               onChange={this.handleChange}
+              id="fun"
               type="checkbox"
               name="data"
               value="funfactor"
@@ -122,6 +129,7 @@ class Chart extends Component {
           <label>
             <input
               onChange={this.handleChange}
+              id="difficulty"
               type="checkbox"
               name="data"
               value="difficulty"

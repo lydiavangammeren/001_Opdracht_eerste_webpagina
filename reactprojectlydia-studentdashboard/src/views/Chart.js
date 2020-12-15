@@ -9,6 +9,10 @@ import {
 } from "react-vis";
 
 class Chart extends Component {
+
+  handleChange() {
+    
+  }
   render() {
     // variables die ik voor zowel fun als difficulty nodig heb:
     const { items } = this.props;
@@ -40,7 +44,6 @@ class Chart extends Component {
     });
     // console.log(xyFunFactorAverage);
 
-
     // functies om difficulty naar het juiste formaat te krijgen.
     // later nog refactoren zodat ik 1 cluster aan functies voor fun en difficulty heb?
 
@@ -56,8 +59,8 @@ class Chart extends Component {
       }
     );
     // console.log(difficultyNumbersPerAssignment);
-    const difficultySum = difficultyNumbersPerAssignment.map((difficultyNumbers) =>
-      difficultyNumbers.reduce((a, b) => a + b)
+    const difficultySum = difficultyNumbersPerAssignment.map(
+      (difficultyNumbers) => difficultyNumbers.reduce((a, b) => a + b)
     );
     const difficultyAverage = difficultySum.map(
       (number) => number / difficultyNumbersPerAssignment[0].length || 0
@@ -72,12 +75,16 @@ class Chart extends Component {
     const funData = xyFunFactorAverage;
     //  const funData = [{x: 0, y: 2 + 4}, {x: 1, y: 4}, {x: 2, y: 4}, {x: 3, y: 4}]
     //  const difficultyData = [{x: 0, y: 5}, {x: 1, y: 3}, {x: 2, y: 2}, {x: 3, y: 1}]
+
+    
+
+
     return (
       <div className="Chart">
         <XYPlot height={400} width={1350}>
           <HorizontalGridLines />
-          <VerticalBarSeries data={funData} />
-          <VerticalBarSeries data={difficultyData} />
+          <VerticalBarSeries className="funfactor" color="#c99da3" data={funData} />
+          <VerticalBarSeries className="difficulty" data={difficultyData} />
           <XAxis />
           <YAxis />
           <YAxis />
@@ -101,6 +108,17 @@ class Chart extends Component {
             }}
           />
         </XYPlot>
+        {/* <form onSubmit={this.handleSubmit}> */}
+        <form>
+          <label>
+            <input onChange={this.handleChange}    type="checkbox" name="data" value="funfactor" /> Funfactor per assignment
+          </label>
+          <label>
+            <input onChange={this.handleChange}type="checkbox" name="data" value="difficulty" /> Difficulty per assignment
+          </label>
+
+          <input type="submit" value="Submit" />
+        </form>
       </div>
     );
   }

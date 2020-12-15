@@ -10,9 +10,11 @@ import {
 
 class Chart extends Component {
   render() {
+    // variables die ik voor zowel fun als difficulty nodig heb:
     const { items } = this.props;
     const assignments = items.map((item) => item.assignment);
     const uniqueassignments = [...new Set(assignments)];
+    // functies om fun naar het juiste formaat te krijgen
     const funNumbersPerAssignment = uniqueassignments.map(
       (uniqueassignment) => {
         const funFactor = [];
@@ -24,28 +26,60 @@ class Chart extends Component {
         return funFactor;
       }
     );
-    console.log(funNumbersPerAssignment);
+    // console.log(funNumbersPerAssignment);
     const funSum = funNumbersPerAssignment.map((funNumbers) =>
       funNumbers.reduce((a, b) => a + b)
     );
     const funAverage = funSum.map(
       (number) => number / funNumbersPerAssignment[0].length || 0
     );
-    console.log(funSum);
-    console.log(funAverage);
+    // console.log(funSum);
+    // console.log(funAverage);
     const xyFunFactorAverage = funAverage.map((y, index) => {
       return { x: index, y };
     });
-    console.log(xyFunFactorAverage);
+    // console.log(xyFunFactorAverage);
 
-    const data = xyFunFactorAverage;
-    //  const data = [{x: 0, y: 4}]
+
+    // functies om difficulty naar het juiste formaat te krijgen.
+    // later nog refactoren zodat ik 1 cluster aan functies voor fun en difficulty heb?
+
+    const difficultyNumbersPerAssignment = uniqueassignments.map(
+      (uniqueassignment) => {
+        const difficulty = [];
+        items.forEach((item) => {
+          if (item.assignment === uniqueassignment) {
+            difficulty.push(parseInt(item.difficulty));
+          }
+        });
+        return difficulty;
+      }
+    );
+    // console.log(difficultyNumbersPerAssignment);
+    const difficultySum = difficultyNumbersPerAssignment.map((difficultyNumbers) =>
+      difficultyNumbers.reduce((a, b) => a + b)
+    );
+    const difficultyAverage = difficultySum.map(
+      (number) => number / difficultyNumbersPerAssignment[0].length || 0
+    );
+    // console.log(difficultySum);
+    // console.log(difficultyAverage);
+    const difficultyData = difficultyAverage.map((y, index) => {
+      return { x: index, y };
+    });
+    // console.log(xyDifficultyAverage);
+
+    const funData = xyFunFactorAverage;
+    //  const funData = [{x: 0, y: 2 + 4}, {x: 1, y: 4}, {x: 2, y: 4}, {x: 3, y: 4}]
+    //  const difficultyData = [{x: 0, y: 5}, {x: 1, y: 3}, {x: 2, y: 2}, {x: 3, y: 1}]
     return (
       <div className="Chart">
-        <XYPlot height={300} width={300}>
+        <XYPlot height={400} width={1350}>
           <HorizontalGridLines />
-          <VerticalBarSeries data={data} />
+          <VerticalBarSeries data={funData} />
+          <VerticalBarSeries data={difficultyData} />
           <XAxis />
+          <YAxis />
           <YAxis />
           <ChartLabel
             text="Assignments"

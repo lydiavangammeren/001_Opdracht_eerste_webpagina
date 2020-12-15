@@ -9,9 +9,8 @@ import {
 } from "react-vis";
 
 class Chart extends Component {
-
-  handleChange() {
-    
+  handleChange(event) {
+    console.log(event.target.value);
   }
   render() {
     // variables die ik voor zowel fun als difficulty nodig heb:
@@ -76,14 +75,15 @@ class Chart extends Component {
     //  const funData = [{x: 0, y: 2 + 4}, {x: 1, y: 4}, {x: 2, y: 4}, {x: 3, y: 4}]
     //  const difficultyData = [{x: 0, y: 5}, {x: 1, y: 3}, {x: 2, y: 2}, {x: 3, y: 1}]
 
-    
-
-
     return (
       <div className="Chart">
         <XYPlot height={400} width={1350}>
           <HorizontalGridLines />
-          <VerticalBarSeries className="funfactor" color="#c99da3" data={funData} />
+          <VerticalBarSeries
+            className="funfactor"
+            color="#c99da3"
+            data={funData}
+          />
           <VerticalBarSeries className="difficulty" data={difficultyData} />
           <XAxis />
           <YAxis />
@@ -111,10 +111,22 @@ class Chart extends Component {
         {/* <form onSubmit={this.handleSubmit}> */}
         <form>
           <label>
-            <input onChange={this.handleChange}    type="checkbox" name="data" value="funfactor" /> Funfactor per assignment
+            <input
+              onChange={this.handleChange}
+              type="checkbox"
+              name="data"
+              value="funfactor"
+            />{" "}
+            Funfactor per assignment
           </label>
           <label>
-            <input onChange={this.handleChange}type="checkbox" name="data" value="difficulty" /> Difficulty per assignment
+            <input
+              onChange={this.handleChange}
+              type="checkbox"
+              name="data"
+              value="difficulty"
+            />{" "}
+            Difficulty per assignment
           </label>
 
           <input type="submit" value="Submit" />

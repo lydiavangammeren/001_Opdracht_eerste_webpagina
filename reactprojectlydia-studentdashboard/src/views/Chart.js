@@ -13,25 +13,33 @@ class Chart extends Component {
     const { items } = this.props;
     const assignments = items.map((item) => item.assignment);
     const uniqueassignments = [...new Set(assignments)];
-    const funPerAssignment = uniqueassignments.map((uniqueassignment) => {
-      const funFactor = [];
-      items.forEach((item) => {
-        if (item.assignment === uniqueassignment) {
-          funFactor.push(item.funfactor);
-        }
-      });
-      return funFactor;
-    });
-    console.log(funPerAssignment);
-    const funNumbersFirstAssignment = funPerAssignment[0];
-    console.log(funNumbersFirstAssignment);
-    const xyobjectsforfunNumbersFirstAssignment = funNumbersFirstAssignment.map((y, index) => {
+    const funNumbersPerAssignment = uniqueassignments.map(
+      (uniqueassignment) => {
+        const funFactor = [];
+        items.forEach((item) => {
+          if (item.assignment === uniqueassignment) {
+            funFactor.push(parseInt(item.funfactor));
+          }
+        });
+        return funFactor;
+      }
+    );
+    console.log(funNumbersPerAssignment);
+    const funSum = funNumbersPerAssignment.map((funNumbers) =>
+      funNumbers.reduce((a, b) => a + b)
+    );
+    const funAverage = funSum.map(
+      (number) => number / funNumbersPerAssignment[0].length || 0
+    );
+    console.log(funSum);
+    console.log(funAverage);
+    const xyFunFactorAverage = funAverage.map((y, index) => {
       return { x: index, y };
     });
-    console.log(xyobjectsforfunNumbersFirstAssignment);
+    console.log(xyFunFactorAverage);
 
-    const data = xyobjectsforfunNumbersFirstAssignment;
-    // const data = [{x: 0, y: 4}]
+    const data = xyFunFactorAverage;
+    //  const data = [{x: 0, y: 4}]
     return (
       <div className="Chart">
         <XYPlot height={300} width={300}>

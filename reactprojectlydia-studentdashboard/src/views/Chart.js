@@ -13,7 +13,6 @@ class Chart extends Component {
     const { items } = this.props;
     const assignments = items.map((item) => item.assignment);
     const uniqueassignments = [...new Set(assignments)];
-    // console.log(uniqueassignments)
     const funPerAssignment = uniqueassignments.map((uniqueassignment) => {
       const funFactor = [];
       items.forEach((item) => {
@@ -24,19 +23,15 @@ class Chart extends Component {
       return funFactor;
     });
     console.log(funPerAssignment);
+    const funNumbersFirstAssignment = funPerAssignment[0];
+    console.log(funNumbersFirstAssignment);
+    const xyobjectsforfunNumbersFirstAssignment = funNumbersFirstAssignment.map((y, index) => {
+      return { x: index, y };
+    });
+    console.log(xyobjectsforfunNumbersFirstAssignment);
 
-    const data = [
-      { x: 0, y: 8 },
-      { x: 1, y: 5 },
-      { x: 2, y: 4 },
-      { x: 3, y: 9 },
-      { x: 4, y: 1 },
-      { x: 5, y: 7 },
-      { x: 6, y: 6 },
-      { x: 7, y: 3 },
-      { x: 8, y: 2 },
-      { x: 9, y: 2 },
-    ];
+    const data = xyobjectsforfunNumbersFirstAssignment;
+    // const data = [{x: 0, y: 4}]
     return (
       <div className="Chart">
         <XYPlot height={300} width={300}>

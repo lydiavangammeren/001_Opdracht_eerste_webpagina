@@ -30,3 +30,11 @@ li {
 .dropdown {
   color: red;
 }
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}

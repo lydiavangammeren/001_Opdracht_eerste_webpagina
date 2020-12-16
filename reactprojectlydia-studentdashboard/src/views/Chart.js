@@ -10,15 +10,24 @@ import {
 
 class Chart extends Component {
   handleChange(event) {
-    const checkedFunBox = document.getElementById("fun");
-    const checkedDifficulty = document.getElementById("difficulty");
-    const checkedBoxValue = event.target.value;
-    const funBars = document.getElementsByClassName("funfactor");
-    if (checkedFunBox.checked == true) {
+    const funCheckBox = document.getElementById("fun");
+    const difficultyCheckBox = document.getElementById("difficulty");
+    // const checkedBoxValue = event.target.value;
+    if (funCheckBox.checked == true) {
+      document.getElementsByClassName("funfactor").className = "visible";
+      console.log(document.getElementsByClassName("funfactor"));
+    } else if (funCheckBox.checked == false) {
+      document.getElementsByClassName("funfactor").className = "hidden";
+      console.log(document.getElementsByClassName("funfactor"));
+    }
+    if (difficultyCheckBox.checked == true) {
       // document.getElementByClassName("funfactor").style.visibility = "visible"
-      console.log("fun checkbox was checked");
-    } else {console.log("should not be visible")}
+      console.log("difficulty checkbox was checked");
+    } else {
+      console.log("difficulty should not be visible");
+    }
   }
+
   render() {
     // variables die ik voor zowel fun als difficulty nodig heb:
     const { items } = this.props;

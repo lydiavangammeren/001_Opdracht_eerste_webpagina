@@ -9,23 +9,24 @@ import {
 } from "react-vis";
 
 class Chart extends Component {
-  handleChange(event) {
-    const funCheckBox = document.getElementById("fun");
-    const difficultyCheckBox = document.getElementById("difficulty");
-    // const checkedBoxValue = event.target.value;
-    if (funCheckBox.checked == true) {
-      document.getElementsByClassName("funfactor").className = "visible";
-      console.log(document.getElementsByClassName("funfactor"));
-    } else if (funCheckBox.checked == false) {
-      document.getElementsByClassName("funfactor").className = "hidden";
-      console.log(document.getElementsByClassName("funfactor"));
-    }
-    if (difficultyCheckBox.checked == true) {
-      // document.getElementByClassName("funfactor").style.visibility = "visible"
-      console.log("difficulty checkbox was checked");
-    } else {
-      console.log("difficulty should not be visible");
-    }
+  constructor() {
+    super();
+
+    this.state = { checked: true, difficultyChecked: true };
+    this.handleFunChange = this.handleFunChange.bind(this);
+    this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
+  }
+
+  handleFunChange(event) {
+    this.setState({
+      checked: !this.state.checked,
+    });
+  }
+
+  handleDifficultyChange() {
+    this.setState({
+      difficultyChecked: !this.state.difficultyChecked,
+    });
   }
 
   render() {
@@ -89,17 +90,23 @@ class Chart extends Component {
 
     //  const funData = [{x: 0, y: 2 + 4}, {x: 1, y: 4}, {x: 2, y: 4}, {x: 3, y: 4}]
     //  const difficultyData = [{x: 0, y: 5}, {x: 1, y: 3}, {x: 2, y: 2}, {x: 3, y: 1}]
+    const funBars = this.state.checked ? (
+      <VerticalBarSeries
+        className="funfactor"
+        color="#c99da3"
+        data={funFactorData}
+      />
+    ) : null;
 
+    const difficultyBars = this.state.difficultyChecked ? (
+      <VerticalBarSeries className="difficulty" data={difficultyData} />
+    ) : null;
     return (
       <div className="Chart">
         <XYPlot height={400} width={1350}>
           <HorizontalGridLines />
-          <VerticalBarSeries
-            className="funfactor"
-            color="#c99da3"
-            data={funFactorData}
-          />
-          <VerticalBarSeries className="difficulty" data={difficultyData} />
+          {funBars}
+          {difficultyBars}
           <XAxis />
           <YAxis className="funfactor" />
           <YAxis className="difficulty" />
@@ -127,7 +134,7 @@ class Chart extends Component {
         <form>
           <label>
             <input
-              onChange={this.handleChange}
+              onChange={this.handleFunChange}
               id="fun"
               type="checkbox"
               name="data"
@@ -137,7 +144,7 @@ class Chart extends Component {
           </label>
           <label>
             <input
-              onChange={this.handleChange}
+              onChange={this.handleDifficultyChange}
               id="difficulty"
               type="checkbox"
               name="data"

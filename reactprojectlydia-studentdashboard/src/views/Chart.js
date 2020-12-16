@@ -12,21 +12,19 @@ class Chart extends Component {
   constructor() {
     super();
 
-    this.state = { checked: true, difficultyChecked: true };
-    this.handleFunChange = this.handleFunChange.bind(this);
-    this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
+    this.state = { checked: false, difficultyChecked: false };
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleFunChange(event) {
-    this.setState({
-      checked: !this.state.checked,
-    });
-  }
-
-  handleDifficultyChange() {
-    this.setState({
-      difficultyChecked: !this.state.difficultyChecked,
-    });
+  handleChange(event) {
+    const value = event.target.value;
+    if (value == "funfactor") {
+      this.setState({
+        checked: !this.state.checked,
+      });
+    } else if (value == "difficulty") {
+      this.setState({ difficultyChecked: !this.state.difficultyChecked });
+    }
   }
 
   render() {
@@ -86,21 +84,26 @@ class Chart extends Component {
     const difficultyData = difficultyAverage.map((y, index) => {
       return { x: index, y };
     });
-    // console.log(xyDifficultyAverage);
 
-    //  const funData = [{x: 0, y: 2 + 4}, {x: 1, y: 4}, {x: 2, y: 4}, {x: 3, y: 4}]
-    //  const difficultyData = [{x: 0, y: 5}, {x: 1, y: 3}, {x: 2, y: 2}, {x: 3, y: 1}]
+    const emptyBars = [
+      funFactorData.map((item) => (item = { x: item.x, y: 0 })),
+    ];
+    console.log(emptyBars);
     const funBars = this.state.checked ? (
       <VerticalBarSeries
         className="funfactor"
         color="#c99da3"
         data={funFactorData}
       />
-    ) : null;
+    ) : (
+      <VerticalBarSeries data={emptyBars} />
+    );
 
     const difficultyBars = this.state.difficultyChecked ? (
       <VerticalBarSeries className="difficulty" data={difficultyData} />
-    ) : null;
+    ) : (
+      <VerticalBarSeries data={emptyBars} />
+    );
     return (
       <div className="Chart">
         <XYPlot height={400} width={1350}>
@@ -130,11 +133,11 @@ class Chart extends Component {
             }}
           />
         </XYPlot>
-        {/* <form onSubmit={this.handleSubmit}> */}
+
         <form>
           <label>
             <input
-              onChange={this.handleFunChange}
+              onChange={this.handleChange}
               id="fun"
               type="checkbox"
               name="data"
@@ -144,7 +147,7 @@ class Chart extends Component {
           </label>
           <label>
             <input
-              onChange={this.handleDifficultyChange}
+              onChange={this.handleChange}
               id="difficulty"
               type="checkbox"
               name="data"
@@ -152,8 +155,6 @@ class Chart extends Component {
             />{" "}
             Difficulty per assignment
           </label>
-
-          <input type="submit" value="Submit" />
         </form>
       </div>
     );

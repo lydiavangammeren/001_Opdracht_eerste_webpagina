@@ -85,10 +85,9 @@ class Chart extends Component {
       return { x: index, y };
     });
 
-    const emptyBars = [
-      funFactorData.map((item) => (item = { x: item.x, y: 0 })),
-    ];
-    console.log(emptyBars);
+    const emptyBars = funFactorData.map((item) => (item = { x: item.x, y: 0 }));
+    // console.log(emptyBars);
+    // console.log(funFactorData);
     const funBars = this.state.checked ? (
       <VerticalBarSeries
         className="funfactor"

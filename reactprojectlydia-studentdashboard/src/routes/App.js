@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Dashboard from "../views/DashBoard";
+import Studentpage from "../views/Studentpage"
 import About from "../views/About";
 import Nav from "../views/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -24,6 +25,7 @@ class App extends React.Component {
               <Home />
             </Route>
             <Route path="/dashboard" component={Dashboard} />
+            <Route path="/Studentpage/:name" component= {Studentpage} />
             <Route path="/about" component={About} />
           </Switch>
         </div>

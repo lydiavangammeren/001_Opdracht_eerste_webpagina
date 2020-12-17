@@ -2,7 +2,7 @@ import React from "react";
 import StudentListItem from "./StudentListItem";
 import studentdata from "../utils/studentdata";
 
-export class StudentList extends React.Component {
+class StudentList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,12 +14,12 @@ export class StudentList extends React.Component {
   };
   render() {
     const items = this.state.students;
-    console.log(items);
     const names = items.map((item) => item.name);
     const uniquenames = [...new Set(names)];
     const listOfStudents = uniquenames
       ? uniquenames.map((uniquename) => (
           <StudentListItem
+            key={uniquename}
             value={uniquename}
             item={uniquename}
           ></StudentListItem>
@@ -28,8 +28,10 @@ export class StudentList extends React.Component {
 
     return (
       <div>
-        <select onChange={this.onChange}>{listOfStudents}</select>
+        <ul onChange={this.onChange}>{listOfStudents}</ul>
       </div>
     );
   }
 }
+
+export default StudentList

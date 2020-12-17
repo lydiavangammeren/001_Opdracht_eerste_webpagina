@@ -1,11 +1,12 @@
 import React from "react";
-import { Router, Route, Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function StudentListItem({ value, item }) {
   return (
-  <option value={value}> <Link to={`/${item}`}></Link> {item}</option>)
-  
-  
+    <li key={value} value={value}>
+      <Link to={`StudentPage/${item}`}>{item}</Link>
+    </li>
+  );
 }
 
 export default StudentListItem;

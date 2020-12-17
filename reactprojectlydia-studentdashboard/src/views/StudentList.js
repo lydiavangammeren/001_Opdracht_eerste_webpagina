@@ -1,33 +1,35 @@
 import React from "react";
-
 import StudentListItem from "./StudentListItem";
-import Dropdown from "react-dropdown";
-import "react-dropdown/style.css";
+import studentdata from "../utils/studentdata";
 
-class StudentList extends React.Component {
+export class StudentList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      students: studentdata,
+    };
+  }
+  onChange = (e) => {
+    console.log(e.target.value);
+  };
   render() {
-    const { items } = this.props; 
+    const items = this.state.students;
+    console.log(items);
     const names = items.map((item) => item.name);
     const uniquenames = [...new Set(names)];
     const listOfStudents = uniquenames
       ? uniquenames.map((uniquename) => (
-          <StudentListItem key={uniquename} item={uniquename}></StudentListItem>
+          <StudentListItem
+            value={uniquename}
+            item={uniquename}
+          ></StudentListItem>
         ))
       : "";
 
-    const defaultOption = listOfStudents[0];
-
     return (
       <div>
-        <Dropdown
-          options={listOfStudents}
-          onChange={this._onSelect}
-          value={defaultOption}
-          placeholder="Select a student"
-        />
+        <select onChange={this.onChange}>{listOfStudents}</select>
       </div>
     );
   }
 }
-
-export default StudentList;

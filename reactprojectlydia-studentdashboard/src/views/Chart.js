@@ -5,6 +5,7 @@ import {
   YAxis,
   HorizontalGridLines,
   VerticalBarSeries,
+  LineSeries,
   ChartLabel,
 } from "react-vis";
 
@@ -58,9 +59,6 @@ class Chart extends Component {
     });
     // console.log(funFactorData);
 
-    // functies om difficulty naar het juiste formaat te krijgen.
-    // later nog refactoren zodat ik 1 cluster aan functies voor fun en difficulty heb?
-
     const difficultyNumbersPerAssignment = uniqueassignments.map(
       (uniqueassignment) => {
         const difficulty = [];
@@ -104,6 +102,7 @@ class Chart extends Component {
       <VerticalBarSeries data={emptyBars} />
     );
     return (
+      <div>
       <div className="Chart">
         <XYPlot height={400} width={1350}>
           <HorizontalGridLines />
@@ -134,8 +133,9 @@ class Chart extends Component {
         </XYPlot>
 
         <form>
-          <label>
+          <label className="funcheckbox">
             <input
+              
               onChange={this.handleChange}
               id="fun"
               type="checkbox"
@@ -144,7 +144,7 @@ class Chart extends Component {
             />{" "}
             Funfactor per assignment
           </label>
-          <label>
+          <label className="difficultycheckbox">
             <input
               onChange={this.handleChange}
               id="difficulty"
@@ -155,6 +155,15 @@ class Chart extends Component {
             Difficulty per assignment
           </label>
         </form>
+      </div>
+      <XYPlot height={400} width={1350}>
+      <HorizontalGridLines />
+      <LineSeries color="#c99da3" data={funFactorData}></LineSeries>
+      <LineSeries data={difficultyData}></LineSeries>
+      <XAxis />
+          <YAxis className="funfactor" />
+          <YAxis className="difficulty" />
+      </XYPlot>
       </div>
     );
   }

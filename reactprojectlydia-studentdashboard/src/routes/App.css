@@ -27,4 +27,15 @@ li {
   padding: 1%;
 }
 
+ul#studentlist li {
+  display: inline;
+  padding: 1%
+}
 
+.funcheckbox {
+  color:  #c99da3;
+}
+
+.difficultycheckbox {
+  color: #79C7E3
+}

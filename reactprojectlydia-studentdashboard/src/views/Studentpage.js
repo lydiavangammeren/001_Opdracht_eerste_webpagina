@@ -67,7 +67,8 @@ function Studentpage(props) {
         </XYPlot>
       </div>
       
-      <h2>Pink = funfactor, blue = difficulty</h2>
+      <h2 className="funcheckbox">funfactor</h2>
+      <h2 className="difficultycheckbox">difficulty</h2>
       
     </div>
   );

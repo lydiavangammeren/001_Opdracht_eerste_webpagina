@@ -57,7 +57,7 @@ class SongList extends React.Component {
       : "";
     return (
       <div>
-        <table class="cinereousTable">
+        <table className="cinereousTable">
           <thead>
             <tr>
               <th>Liedje</th>
@@ -97,6 +97,7 @@ class SongList extends React.Component {
               <option value="dieren">dieren</option>
               <option value="verliefdheid">verliefdheid</option>
               <option value="geld">geld</option>
+              <option value="reset">alle liedjes</option>
             </select>
           </label>
           <label>
@@ -107,6 +108,7 @@ class SongList extends React.Component {
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
+              <option value="reset">alle cijfers</option>
             </select>
           </label>
         </form>

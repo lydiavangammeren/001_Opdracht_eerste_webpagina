@@ -2,14 +2,12 @@ import React from "react";
 import "./App.css";
 import Home from "../views/Home";
 import Dashboard from "../views/DashBoard";
-import Studentpage from "../views/Studentpage"
+import Studentpage from "../views/Studentpage";
 import About from "../views/About";
 import Nav from "../views/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import studentdata from "../utils/studentdata"
-
-
+import studentdata from "../utils/studentdata";
 
 class App extends React.Component {
   constructor(props) {

@@ -45,19 +45,16 @@ class Chart extends Component {
         return funFactor;
       }
     );
-    // console.log(funNumbersPerAssignment);
     const funSum = funNumbersPerAssignment.map((funNumbers) =>
       funNumbers.reduce((a, b) => a + b)
     );
     const funAverage = funSum.map(
       (number) => number / funNumbersPerAssignment[0].length || 0
     );
-    // console.log(funSum);
-    // console.log(funAverage);
+
     const funFactorData = funAverage.map((y, index) => {
       return { x: index, y };
     });
-    // console.log(funFactorData);
 
     const difficultyNumbersPerAssignment = uniqueassignments.map(
       (uniqueassignment) => {

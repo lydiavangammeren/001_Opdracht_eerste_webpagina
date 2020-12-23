@@ -3,10 +3,6 @@ import StudentListItem from "./StudentListItem";
 import studentdata from "../utils/studentdata";
 
 class StudentList extends React.Component {
-  
-  onChange = (e) => {
-    console.log(e.target.value);
-  };
   render() {
     const items = studentdata;
     const names = items.map((item) => item.name);
@@ -23,10 +19,10 @@ class StudentList extends React.Component {
 
     return (
       <div>
-        <ul id="studentlist" onChange={this.onChange}>{listOfStudents}</ul>
+        <ul id="studentlist">{listOfStudents}</ul>
       </div>
     );
   }
 }
 
-export default StudentList
+export default StudentList;

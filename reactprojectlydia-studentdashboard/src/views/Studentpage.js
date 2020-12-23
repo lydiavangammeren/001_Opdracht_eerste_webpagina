@@ -7,11 +7,10 @@ import {
   VerticalBarSeries,
   ChartLabel,
 } from "react-vis";
-// import studentdata from "../utils/studentdata";
 
-function Studentpage({items}) {
-  const studentdata = items
-    console.log(studentdata)
+function Studentpage({ data }) {
+  const studentdata = data;
+  console.log(studentdata);
   const nameInUrl = window.location.pathname.split("/")[2];
   console.log(nameInUrl);
   const studentevaluation = studentdata.filter(

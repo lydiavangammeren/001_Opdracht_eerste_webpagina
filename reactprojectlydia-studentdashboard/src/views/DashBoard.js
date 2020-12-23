@@ -22,7 +22,7 @@ class DashBoard extends React.Component {
         <Chart items={this.state.students}></Chart>
         <StudentList items={this.state.students}></StudentList>
         <AssignmentList items={this.state.students}></AssignmentList>
-        <Studentpage items={this.state.students} />
+        {/* <Studentpage items={this.state.students} /> */}
       </div>
     );
   }

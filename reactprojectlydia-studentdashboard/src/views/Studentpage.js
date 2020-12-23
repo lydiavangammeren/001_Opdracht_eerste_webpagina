@@ -7,15 +7,17 @@ import {
   VerticalBarSeries,
   ChartLabel,
 } from "react-vis";
-import studentdata from "../utils/studentdata";
+// import studentdata from "../utils/studentdata";
 
-function Studentpage(props) {
-  console.log(props);
-  const nameInUrl = window.location.pathname.split("/")
-  console.log(nameInUrl)
-  const name = props.match.params.name;
-  const studentevaluation = studentdata.filter((item) => item.name === name);
-  //   console.log(studentevaluation)
+function Studentpage({items}) {
+  const studentdata = items
+    console.log(studentdata)
+  const nameInUrl = window.location.pathname.split("/")[2];
+  console.log(nameInUrl);
+  const studentevaluation = studentdata.filter(
+    (item) => item.name === nameInUrl
+  );
+
   const funNumbers = studentevaluation.map(
     (assignment) => assignment.funfactor
   );
@@ -32,7 +34,7 @@ function Studentpage(props) {
   });
   return (
     <div>
-      <h2>{`${name}'s evaluation of the assignments`}</h2>
+      <h2>{`${nameInUrl}'s evaluation of the assignments`}</h2>
       <div className="Chart">
         <XYPlot height={400} width={1350}>
           <HorizontalGridLines />

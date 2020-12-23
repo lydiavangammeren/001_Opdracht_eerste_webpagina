@@ -17,7 +17,7 @@ class Chart extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     const value = event.target.value;
     if (value === "funfactor") {
       this.setState({

@@ -8,11 +8,11 @@ class AssignmentList extends React.Component {
     const assignments = items.map((item) => item.assignment);
     const uniqueAssignments = [...new Set(assignments)];
     const listOfAssignments = uniqueAssignments
-      ? uniqueAssignments.map((uniqueassignment, index) => (
+      ? uniqueAssignments.map((uniqueAssignment, index) => (
           <AssignmentListItem
-            key={uniqueassignment}
-            value={uniqueassignment}
-            item={uniqueassignment}
+            key={uniqueAssignment}
+            value={uniqueAssignment}
+            item={uniqueAssignment}
             number={index}
           ></AssignmentListItem>
         ))

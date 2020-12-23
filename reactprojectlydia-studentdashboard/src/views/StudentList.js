@@ -1,10 +1,10 @@
 import React from "react";
 import StudentListItem from "./StudentListItem";
-import studentdata from "../utils/studentdata";
+
 
 class StudentList extends React.Component {
   render() {
-    const items = studentdata;
+    const {items} = this.props;
     const names = items.map((item) => item.name);
     const uniquenames = [...new Set(names)];
     const listOfStudents = uniquenames

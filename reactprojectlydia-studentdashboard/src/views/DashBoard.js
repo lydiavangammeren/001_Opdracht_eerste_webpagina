@@ -3,7 +3,6 @@ import Chart from "./Chart";
 import studentdata from "../utils/studentdata";
 import StudentList from "./StudentList";
 import AssignmentList from "./AssignmentList";
-import Studentpage from "./Studentpage"
 import "../../node_modules/react-vis/dist/style.css";
 
 class DashBoard extends React.Component {
@@ -22,7 +21,6 @@ class DashBoard extends React.Component {
         <Chart items={this.state.students}></Chart>
         <StudentList items={this.state.students}></StudentList>
         <AssignmentList items={this.state.students}></AssignmentList>
-        {/* <Studentpage items={this.state.students} /> */}
       </div>
     );
   }

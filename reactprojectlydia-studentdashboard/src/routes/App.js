@@ -23,10 +23,8 @@ class App extends React.Component {
               <Home />
             </Route>
             <Route path="/dashboard" component={Dashboard} />
-            {/* <Route path="/Studentpage/:name" component={Studentpage} /> */}
-            <Studentpage data={this.state.students}></Studentpage>
-
             <Route path="/about" component={About} />
+            <Studentpage data={this.state.students}></Studentpage>
           </Switch>
         </div>
       </Router>

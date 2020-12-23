@@ -10,10 +10,10 @@ import {
 import studentdata from "../utils/studentdata";
 
 function Studentpage(props) {
-  // console.log(props)
+  console.log(props);
+  const nameInUrl = window.location.pathname.split("/")
+  console.log(nameInUrl)
   const name = props.match.params.name;
-  const assignments = studentdata.map((item) => item.assignment);
-  const uniqueassignments = [...new Set(assignments)];
   const studentevaluation = studentdata.filter((item) => item.name === name);
   //   console.log(studentevaluation)
   const funNumbers = studentevaluation.map(
@@ -66,10 +66,9 @@ function Studentpage(props) {
           />
         </XYPlot>
       </div>
-      
+
       <h2 className="funcheckbox">funfactor</h2>
       <h2 className="difficultycheckbox">difficulty</h2>
-      
     </div>
   );
 }

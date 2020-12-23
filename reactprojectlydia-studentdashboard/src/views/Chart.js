@@ -19,11 +19,11 @@ class Chart extends Component {
 
   handleChange(event) {
     const value = event.target.value;
-    if (value == "funfactor") {
+    if (value === "funfactor") {
       this.setState({
         checked: !this.state.checked,
       });
-    } else if (value == "difficulty") {
+    } else if (value === "difficulty") {
       this.setState({ difficultyChecked: !this.state.difficultyChecked });
     }
   }
@@ -70,22 +70,20 @@ class Chart extends Component {
         return difficulty;
       }
     );
-    // console.log(difficultyNumbersPerAssignment);
+
     const difficultySum = difficultyNumbersPerAssignment.map(
       (difficultyNumbers) => difficultyNumbers.reduce((a, b) => a + b)
     );
     const difficultyAverage = difficultySum.map(
       (number) => number / difficultyNumbersPerAssignment[0].length || 0
     );
-    // console.log(difficultySum);
-    // console.log(difficultyAverage);
+
     const difficultyData = difficultyAverage.map((y, index) => {
       return { x: index, y };
     });
 
     const emptyBars = funFactorData.map((item) => (item = { x: item.x, y: 0 }));
-    // console.log(emptyBars);
-    // console.log(funFactorData);
+
     const funBars = this.state.checked ? (
       <VerticalBarSeries
         className="funfactor"
@@ -103,67 +101,66 @@ class Chart extends Component {
     );
     return (
       <div>
-      <div className="Chart">
+        <div className="Chart">
+          <XYPlot height={400} width={1350}>
+            <HorizontalGridLines />
+            {funBars}
+            {difficultyBars}
+            <XAxis />
+            <YAxis className="funfactor" />
+            <YAxis className="difficulty" />
+            <ChartLabel
+              text="Assignments"
+              className="alt-x-label"
+              includeMargin={false}
+              xPercent={0.025}
+              yPercent={1.01}
+            />
+
+            <ChartLabel
+              text="Funfactor & difficulty"
+              className="alt-y-label"
+              includeMargin={false}
+              xPercent={0.06}
+              yPercent={0.06}
+              style={{
+                transform: "rotate(-90)",
+                textAnchor: "end",
+              }}
+            />
+          </XYPlot>
+
+          <form>
+            <label className="funcheckbox">
+              <input
+                onChange={this.handleChange}
+                id="fun"
+                type="checkbox"
+                name="data"
+                value="funfactor"
+              />{" "}
+              Funfactor per assignment
+            </label>
+            <label className="difficultycheckbox">
+              <input
+                onChange={this.handleChange}
+                id="difficulty"
+                type="checkbox"
+                name="data"
+                value="difficulty"
+              />{" "}
+              Difficulty per assignment
+            </label>
+          </form>
+        </div>
         <XYPlot height={400} width={1350}>
           <HorizontalGridLines />
-          {funBars}
-          {difficultyBars}
+          <LineSeries color="#c99da3" data={funFactorData}></LineSeries>
+          <LineSeries data={difficultyData}></LineSeries>
           <XAxis />
           <YAxis className="funfactor" />
           <YAxis className="difficulty" />
-          <ChartLabel
-            text="Assignments"
-            className="alt-x-label"
-            includeMargin={false}
-            xPercent={0.025}
-            yPercent={1.01}
-          />
-
-          <ChartLabel
-            text="Funfactor & difficulty"
-            className="alt-y-label"
-            includeMargin={false}
-            xPercent={0.06}
-            yPercent={0.06}
-            style={{
-              transform: "rotate(-90)",
-              textAnchor: "end",
-            }}
-          />
         </XYPlot>
-
-        <form>
-          <label className="funcheckbox">
-            <input
-              
-              onChange={this.handleChange}
-              id="fun"
-              type="checkbox"
-              name="data"
-              value="funfactor"
-            />{" "}
-            Funfactor per assignment
-          </label>
-          <label className="difficultycheckbox">
-            <input
-              onChange={this.handleChange}
-              id="difficulty"
-              type="checkbox"
-              name="data"
-              value="difficulty"
-            />{" "}
-            Difficulty per assignment
-          </label>
-        </form>
-      </div>
-      <XYPlot height={400} width={1350}>
-      <HorizontalGridLines />
-      <LineSeries color="#c99da3" data={funFactorData}></LineSeries>
-      <LineSeries data={difficultyData}></LineSeries>
-      <XAxis />
-          <YAxis className="funfactor" />
-          <YAxis className="difficulty" />
-      </XYPlot>
       </div>
     );
   }

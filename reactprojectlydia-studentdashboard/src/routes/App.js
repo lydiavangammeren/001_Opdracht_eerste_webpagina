@@ -1,20 +1,24 @@
 import React from "react";
 import "./App.css";
+import Home from "../views/Home";
 import Dashboard from "../views/DashBoard";
 import Studentpage from "../views/Studentpage"
 import About from "../views/About";
 import Nav from "../views/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import logo from "./studentcomputer.png";
 
-const Home = () => (
-  <div>
-    <h1>Home</h1>
-    <img src={logo} alt="studentwithcomputer" />
-  </div>
-);
+import studentdata from "../utils/studentdata"
+
+
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      students: studentdata,
+    };
+  }
   render() {
     return (
       <Router>
@@ -25,7 +29,7 @@ class App extends React.Component {
               <Home />
             </Route>
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/Studentpage/:name" component= {Studentpage} />
+            <Route path="/Studentpage/:name" component={Studentpage} />
             <Route path="/about" component={About} />
           </Switch>
         </div>

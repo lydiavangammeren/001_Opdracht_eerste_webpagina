@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
 import Home from "../views/Home";
-import Dashboard from "../views/DashBoard";
+import DashBoard from "../views/DashBoard";
 import Studentpage from "../views/Studentpage";
 import About from "../views/About";
 import Nav from "../views/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import studentdata from "../utils/studentdata";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -22,9 +23,11 @@ class App extends React.Component {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/dashboard" component={Dashboard} />
+            {/* <Route path="/dashboard" component={Dashboard} /> */}
             <Route path="/about" component={About} />
+            <DashBoard data={this.state.students}></DashBoard>
             <Studentpage data={this.state.students}></Studentpage>
+            
           </Switch>
         </div>
       </Router>

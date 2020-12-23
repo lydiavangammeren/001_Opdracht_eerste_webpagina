@@ -10,8 +10,8 @@ import {
 } from "react-vis";
 
 class Chart extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = { checked: false, difficultyChecked: false };
     this.handleChange = this.handleChange.bind(this);

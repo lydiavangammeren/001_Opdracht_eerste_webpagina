@@ -4,7 +4,6 @@ class Nav extends React.Component {
   render() {
     return (
       <div>
-      <span style={{color:'#5e4955'}}>-------</span>
         <nav>
           <ul>
             <Link to="/">

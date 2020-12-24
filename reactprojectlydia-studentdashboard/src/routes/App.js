@@ -24,10 +24,10 @@ class App extends React.Component {
             </Route>
             <Route path="/about" component={About} />
             <Route path="/dashboard">
-            <DashBoard data={this.state.students}></DashBoard>
+              <DashBoard data={this.state.students}></DashBoard>
             </Route>
-            <Route path="studentpage">
-            <Studentpage data={this.state.students}></Studentpage>
+            <Route path="/studentpage">
+              <Studentpage data={this.state.students}></Studentpage>
             </Route>
           </Switch>
         </div>

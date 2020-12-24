@@ -8,7 +8,6 @@ import Nav from "../views/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import studentdata from "../utils/studentdata";
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -23,11 +22,13 @@ class App extends React.Component {
             <Route exact path="/">
               <Home />
             </Route>
-            {/* <Route path="/dashboard" component={Dashboard} /> */}
             <Route path="/about" component={About} />
+            <Route path="/dashboard">
             <DashBoard data={this.state.students}></DashBoard>
+            </Route>
+            <Route path="studentpage">
             <Studentpage data={this.state.students}></Studentpage>
-            
+            </Route>
           </Switch>
         </div>
       </Router>
